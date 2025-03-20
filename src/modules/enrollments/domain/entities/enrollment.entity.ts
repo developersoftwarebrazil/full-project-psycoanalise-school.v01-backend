@@ -12,4 +12,3 @@ export class Enrollment {
     return new Enrollment(id, studentId, courseId);
   }
 }
-git
