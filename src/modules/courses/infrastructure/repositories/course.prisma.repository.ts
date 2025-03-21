@@ -19,7 +19,7 @@ export class CoursePrismaRepository implements CourseRepository {
   async findAll(): Promise<Course[]> {
     return this.prisma.course.findMany();
   }
- async findById(id: string): Promise<Course | null> {
+  async findById(id: string): Promise<Course | null> {
     return this.prisma.course.findUnique({ where: { id } });
   }
 

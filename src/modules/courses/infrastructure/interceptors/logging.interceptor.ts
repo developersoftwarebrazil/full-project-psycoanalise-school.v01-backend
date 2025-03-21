@@ -5,10 +5,11 @@ import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class LoggingInterceptor implements NestInterceptor {
-  intercept(context: ExecutionContext, next: CallHandler<any>): Observable<any> {
+  intercept(
+    context: ExecutionContext,
+    next: CallHandler<any>,
+  ): Observable<any> {
     console.log('Before...');
-    return next.handle().pipe(
-      tap(() => console.log('After...'))
-    );
+    return next.handle().pipe(tap(() => console.log('After...')));
   }
 }
