@@ -22,8 +22,8 @@ export class CoursesController {
   ) {}
 
   @Post()
-  async create(@Body() body: { name: string; description: string }) {
-    return this.createCourseUseCase.execute(body.name, body.description);
+  async create(@Body() body: { title: string; description: string }) {
+    return this.createCourseUseCase.execute(body.title, body.description);
   }
 
   @Get()
@@ -34,9 +34,9 @@ export class CoursesController {
   @Put(':id')
   async update(
     @Param('id') id: string,
-    @Body() body: { name?: string; description?: string },
+    @Body() body: { title?: string; description?: string },
   ) {
-    return this.updateCourseUseCase.execute(id, body.name, body.description);
+    return this.updateCourseUseCase.execute(id, body.title, body.description);
   }
 
   @Delete(':id')
