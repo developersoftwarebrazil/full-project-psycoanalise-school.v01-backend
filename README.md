@@ -42,14 +42,22 @@ npm install
 
 ### 3️⃣ Configure o banco de dados
 Crie um arquivo .env na raiz do projeto e configure as seguintes variáveis:
-#### 3️⃣ Configurar variáveis de ambiente
- - **Crie um arquivo .env e defina a URL do PostgreSQL:**
+ - **defina a URL do PostgreSQL:**
  ```bash 
  DATABASE_URL="postgresql://usuario:senha@localhost:5432/escola_psicanalise"
  PORT=3000
  JWT_SECRET="sua_chave_secreta"
  ```
-   - **Rode as migrações:**
+### 4️⃣ Executar as migrações do Prisma
+```bash
+npx prisma migrate dev
+```
+
+### 5️⃣ Rodar o servidor
+```bash
+npm run start:dev
+```
+A API estará disponível em http://localhost:3000.
 
 
 
