@@ -174,7 +174,7 @@ Esse modelo garante uma arquitetura escalável e bem organizada seguindo o DDD. 
 
 Sinta-se à vontade para contribuir com melhorias e sugestões! 🚀
 
-📄 Licença
+### 📄 Licença
 
 Este projeto está sob a licença MIT. Sinta-se livre para usá-lo e modificá-lo conforme necessário.
 
