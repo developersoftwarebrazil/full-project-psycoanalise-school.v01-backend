@@ -81,7 +81,6 @@ Um estudante tem um ID único, um nome, um email validado e um CPF validado.
 
 *** 2️⃣ Course (Curso)
 
-
 ```bash
 Tabela: courses
 ---------------------------------
@@ -104,47 +103,30 @@ Tabela: enrollments
 | created_at     | TIMESTAMP    |
 ---------------------------------
 ```
-Um estudante pode se matricular em vários cursos e um curso pode ter vários estudantes (Relacionamento M:N).
+- **Um estudante pode se matricular em vários cursos e um curso pode ter vários estudantes (Relacionamento M:N).**
+- **O status pode ser ACTIVE, CANCELLED.**
 
-
-
-
-
-```bash
-```
-
-```bash
-```
-
-
-O status pode ser ACTIVE, CANCELLED.
-
-🔹 Value Objects
+## 🔹 Value Objects
 Os Value Objects ajudam a garantir consistência e regras de negócio.
 
-📌 Email
-Deve ser validado no momento da criação.
+### 📌 Email
+-  **Deve ser validado no momento da criação.**
+-  **Deve ter um formato válido (exemplo: email@dominio.com).**
 
-Deve ter um formato válido (exemplo: email@dominio.com).
-
-📌 CPF
-Deve ser validado no momento da criação.
-
-Deve seguir a estrutura correta (XXX.XXX.XXX-XX).
+### 📌 CPF
+- **Deve ser validado no momento da criação.**
+- **Deve seguir a estrutura correta (XXX.XXX.XXX-XX).**
 
 🔹 Relacionamentos
 1:N → Um estudante pode se matricular em vários cursos.
 
 N:N → Um curso pode ter vários estudantes (através de Enrollment).
 
-plaintext
-Copiar
-Editar
+
 students (1) 🔁 (N) enrollments (N) 🔁 (1) courses
 🎯 Diagrama ER (Entidade-Relacionamento)
-lua
-Copiar
-Editar
+
+```bash
 +----------------+      +-----------------+      +---------------+
 |   Students     |      |   Enrollments   |      |    Courses    |
 +----------------+      +-----------------+      +---------------+
@@ -154,6 +136,11 @@ Editar
 | cpf           |   │  | status          |  │   | created_at    |
 | created_at    |   │  | created_at      |  │   +---------------+
 +----------------+   └──┴────────────────┘
+```
+
+```bash
+```
+
 🚀 Principais Regras de Negócio
 ✅ Um estudante pode se inscrever em múltiplos cursos.
 ✅ Um curso pode ter vários estudantes.
