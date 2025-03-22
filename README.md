@@ -11,48 +11,17 @@ Este é o backend de uma plataforma de cursos online, desenvolvido utilizando Ne
 
 ## 📂 Estrutura do Projeto
 ```bash
-src/
-├── common/                   # Código compartilhado entre módulos
-│   ├── dto/                  # Objetos de transferência de dados (DTOs)
-│   ├── filters/              # Filtros (por exemplo, filtros de exceções)
-│   ├── guards/               # Guards de autenticação, autorização
-│   ├── interceptors/         # Interceptadores (ex: para logs, métricas)
-│   └── pipes/                # Pipes de validação, transformação de dados
-├── modules/                  # Módulos específicos do sistema
-│   ├── students/             # Módulo de gestão de alunos
-│   │   ├── application/      # Casos de uso, serviços
-│   │   │   ├── create-student.use-case.ts
-│   │   │   └── get-student.use-case.ts
-│   │   ├── domain/           # Lógica de negócios (entidades, repositórios)
-│   │   │   ├── entities/     # Entidades (ex: Student)
-│   │   │   └── repositories/ # Repositórios (ex: StudentRepository)
-│   │   ├── infrastructure/   # Implementações específicas (ex: banco de dados)
-│   │   │   └── student.repository.ts
-│   │   ├── interfaces/       # Interfaces públicas
-│   │   └── student.module.ts # Definição do módulo
-│   ├── courses/              # Módulo de cursos
-│   │   ├── application/
-│   │   ├── domain/
-│   │   ├── infrastructure/
-│   │   └── course.module.ts
-│   ├── enrollments/          # Módulo de matrículas
-│   │   ├── application/
-│   │   ├── domain/
-│   │   ├── infrastructure/
-│   │   └── enrollment.module.ts
-│   └── payments/             # Módulo de pagamentos
-│       ├── application/
-│       ├── domain/
-│       ├── infrastructure/
-│       └── payment.module.ts
-├── config/                   # Configurações globais (ex: banco de dados, JWT)
-│   ├── database.config.ts
-│   └── jwt.config.ts
-├── main.ts                   # Arquivo de entrada da aplicação
-├── app.module.ts             # Módulo raiz da aplicação
-└── shared/                   # Utilitários compartilhados
-    ├── logger.ts             # Configurações de log
-    └── validation.pipe.ts    # Validação de requisições
+📂 src
+ ┣ 📂 usecases               # Casos de uso (Application Layer)
+ ┣ 📂 domain                 # Entidades e Repositórios (Domain Layer)
+ ┣ 📂 infrastructure         # Infraestrutura (Banco de Dados, Serviços, etc.)
+ ┃ ┣ 📂 database             # Prisma ORM e conexão com DB
+ ┃ ┣ 📂 repositories         # Implementação dos repositórios
+ ┃ ┣ 📂 controllers          # Controllers das rotas
+ ┃ ┗ 📂 services             # Serviços externos (ex: envio de e-mail)
+ ┣ 📂 presentation           # Interface de entrada (REST, GraphQL, etc.)
+ ┣ 📂 test                   # Testes unitários e de integração
+ ┗ 📜 main.ts                # Arquivo principal da aplicação
 
 ```
 
@@ -63,4 +32,23 @@ src/
    - **Crie um arquivo .env e defina a URL do PostgreSQL:**
    - **Rode as migrações:**
 4. Inicie o servidor:
+
+### 1️⃣ Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio/backend
+```
+
+### 2️⃣ Instale as dependências
+```bash 
+npm install
+```
+
+### 3️⃣ Configurar variáveis de ambiente
+Crie um arquivo .env na raiz do projeto e configure as seguintes variáveis:
+```bash 
+DATABASE_URL="postgresql://usuario:senha@localhost:5432/escola_psicanalise"
+PORT=3000
+JWT_SECRET="sua_chave_secreta"
+```
 
