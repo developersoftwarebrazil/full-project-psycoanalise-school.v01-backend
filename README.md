@@ -144,3 +144,37 @@ Os Value Objects ajudam a garantir consistência e regras de negócio.
 
 Esse modelo garante uma arquitetura escalável e bem organizada seguindo o DDD. 🚀
 
+## 📌 Endpoints Principais
+
+### 📌 Estudantes
+
+- **POST /students - Criar um estudante**
+- **GET /students/:id - Buscar um estudante por ID**
+- **PUT /students/:id - Atualizar um estudante**
+
+### 📌 Cursos
+
+- **POST /courses - Criar um curso**
+- **GET /courses/:id - Buscar um curso por ID**
+- **PUT /courses/:id - Atualizar um curso**
+
+### 📌 Matrículas
+
+- **POST /enrollments - Criar uma matrícula**
+- **GET /enrollments/:id - Buscar uma matrícula por ID**
+- **DELETE /enrollments/:id - Cancelar uma matrícula**
+
+### 🛠 Melhorias Futuras
+
+- **📌 Implementação de autenticação JWT para proteger os endpoints**
+- **📌 Cache para otimizar performance**
+- **📌 Suporte a WebSockets para notificações em tempo real**
+
+### 🤝 Contribuição
+
+Sinta-se à vontade para contribuir com melhorias e sugestões! 🚀
+
+📄 Licença
+
+Este projeto está sob a licença MIT. Sinta-se livre para usá-lo e modificá-lo conforme necessário.
+
