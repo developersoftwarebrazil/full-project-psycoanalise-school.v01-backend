@@ -10,7 +10,7 @@ export class CoursePrismaRepository implements CourseRepository {
     return this.prisma.course.create({
       data: {
         id: course.id,
-        name: course.name,
+        title: course.title,
         description: course.description,
       },
     });

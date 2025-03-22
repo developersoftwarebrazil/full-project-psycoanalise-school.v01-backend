@@ -3,7 +3,6 @@ import { PrismaService } from 'src/common/prisma.service';
 import { EnrollmentRepository } from '../../domain/repositories/enrollment.repository';
 import { Enrollment } from '../../domain/entities/enrollment.entity';
 
-
 @Injectable()
 export class EnrollmentPrismaRepository implements EnrollmentRepository {
   constructor(private readonly prisma: PrismaService) {}
