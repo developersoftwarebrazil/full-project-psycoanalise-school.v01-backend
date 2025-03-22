@@ -59,5 +59,106 @@ npm run start:dev
 ```
 A API estará disponível em http://localhost:3000.
 
+## 📊 Modelagem de Dados
+A modelagem inclui entidades, relacionamentos e value objects.
 
+### **🔹 Entidades (Entities)**
+As entidades representam os principais objetos do domínio.
+
+### 1️⃣ Student (Estudante)
+
+```bash
+Tabela: students
+---------------------------------
+| id (PK)       | UUID         |
+| name          | STRING       |
+| email         | STRING       |
+| cpf           | STRING       |
+| created_at    | TIMESTAMP    |
+---------------------------------
+```
+Um estudante tem um ID único, um nome, um email validado e um CPF validado.
+
+*** 2️⃣ Course (Curso)
+
+
+```bash
+Tabela: courses
+---------------------------------
+| id (PK)       | UUID         |
+| title         | STRING       |
+| description   | TEXT         |
+| created_at    | TIMESTAMP    |
+---------------------------------
+```
+- **Um curso tem um título e uma descrição.**
+
+### 3️⃣ Enrollment (Matrícula)
+```bash
+Tabela: enrollments
+---------------------------------
+| id (PK)        | UUID         |
+| student_id (FK)| UUID         |
+| course_id (FK) | UUID         |
+| status         | ENUM         |
+| created_at     | TIMESTAMP    |
+---------------------------------
+```
+Um estudante pode se matricular em vários cursos e um curso pode ter vários estudantes (Relacionamento M:N).
+
+
+
+
+
+```bash
+```
+
+```bash
+```
+
+
+O status pode ser ACTIVE, CANCELLED.
+
+🔹 Value Objects
+Os Value Objects ajudam a garantir consistência e regras de negócio.
+
+📌 Email
+Deve ser validado no momento da criação.
+
+Deve ter um formato válido (exemplo: email@dominio.com).
+
+📌 CPF
+Deve ser validado no momento da criação.
+
+Deve seguir a estrutura correta (XXX.XXX.XXX-XX).
+
+🔹 Relacionamentos
+1:N → Um estudante pode se matricular em vários cursos.
+
+N:N → Um curso pode ter vários estudantes (através de Enrollment).
+
+plaintext
+Copiar
+Editar
+students (1) 🔁 (N) enrollments (N) 🔁 (1) courses
+🎯 Diagrama ER (Entidade-Relacionamento)
+lua
+Copiar
+Editar
++----------------+      +-----------------+      +---------------+
+|   Students     |      |   Enrollments   |      |    Courses    |
++----------------+      +-----------------+      +---------------+
+| id (PK)       |◀──┐  | id (PK)         |  ┌──▶| id (PK)       |
+| name          |   │  | student_id (FK) |  │   | title         |
+| email         |   │  | course_id (FK)  |  │   | description   |
+| cpf           |   │  | status          |  │   | created_at    |
+| created_at    |   │  | created_at      |  │   +---------------+
++----------------+   └──┴────────────────┘
+🚀 Principais Regras de Negócio
+✅ Um estudante pode se inscrever em múltiplos cursos.
+✅ Um curso pode ter vários estudantes.
+✅ O email e o CPF do estudante devem ser válidos.
+✅ O status da matrícula só pode ter valores predefinidos.
+
+Esse modelo garante uma arquitetura escalável e bem organizada seguindo o DDD. 🚀
 
