@@ -26,11 +26,7 @@ Este é o backend de uma plataforma de cursos online, desenvolvido utilizando Ne
 ```
 
 ## **⚙️ Configuração do Ambiente**
-1. Clone o repositório:
-2. Instale as dependências:
-3. **Configure o banco de dados:**
-   - **Crie um arquivo .env e defina a URL do PostgreSQL:**
-   - **Rode as migrações:**
+
 4. Inicie o servidor:
 
 ### 1️⃣ Clone o repositório
@@ -44,11 +40,16 @@ cd seu-repositorio/backend
 npm install
 ```
 
-### 3️⃣ Configurar variáveis de ambiente
+### 3️⃣ Configure o banco de dados
 Crie um arquivo .env na raiz do projeto e configure as seguintes variáveis:
-```bash 
-DATABASE_URL="postgresql://usuario:senha@localhost:5432/escola_psicanalise"
-PORT=3000
-JWT_SECRET="sua_chave_secreta"
-```
+#### 3️⃣ Configurar variáveis de ambiente
+ - **Crie um arquivo .env e defina a URL do PostgreSQL:**
+ ```bash 
+ DATABASE_URL="postgresql://usuario:senha@localhost:5432/escola_psicanalise"
+ PORT=3000
+ JWT_SECRET="sua_chave_secreta"
+ ```
+   - **Rode as migrações:**
+
+
 
