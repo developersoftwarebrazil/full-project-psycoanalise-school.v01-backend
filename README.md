@@ -117,14 +117,12 @@ Os Value Objects ajudam a garantir consistência e regras de negócio.
 - **Deve ser validado no momento da criação.**
 - **Deve seguir a estrutura correta (XXX.XXX.XXX-XX).**
 
-🔹 Relacionamentos
-1:N → Um estudante pode se matricular em vários cursos.
+### 🔹 Relacionamentos
+- **1:N → Um estudante pode se matricular em vários cursos.**
+- **N:N → Um curso pode ter vários estudantes (através de Enrollment).**
+- **students (1) 🔁 (N) enrollments (N) 🔁 (1) courses**
 
-N:N → Um curso pode ter vários estudantes (através de Enrollment).
-
-
-students (1) 🔁 (N) enrollments (N) 🔁 (1) courses
-🎯 Diagrama ER (Entidade-Relacionamento)
+## 🎯 Diagrama ER (Entidade-Relacionamento)
 
 ```bash
 +----------------+      +-----------------+      +---------------+
@@ -138,14 +136,11 @@ students (1) 🔁 (N) enrollments (N) 🔁 (1) courses
 +----------------+   └──┴────────────────┘
 ```
 
-```bash
-```
-
-🚀 Principais Regras de Negócio
-✅ Um estudante pode se inscrever em múltiplos cursos.
-✅ Um curso pode ter vários estudantes.
-✅ O email e o CPF do estudante devem ser válidos.
-✅ O status da matrícula só pode ter valores predefinidos.
+## 🚀 Principais Regras de Negócio
+- **✅ Um estudante pode se inscrever em múltiplos cursos.**
+- **✅ Um curso pode ter vários estudantes.**
+- **✅ O email e o CPF do estudante devem ser válidos.**
+- **✅ O status da matrícula só pode ter valores predefinidos.**
 
 Esse modelo garante uma arquitetura escalável e bem organizada seguindo o DDD. 🚀
 
